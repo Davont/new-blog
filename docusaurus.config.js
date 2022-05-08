@@ -109,8 +109,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Davont, Built with Docusaurus.
-      <a style='text-decoration:none' href='http://beian.miit.gov.cn'><p style='color:white'>冀ICP备2020030963号-1</p></a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} Davont, Built with Docusaurus.`,
     },
   },
   presets: [
