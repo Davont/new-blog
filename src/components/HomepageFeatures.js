@@ -1,7 +1,9 @@
 import React from "react";
 import { useSpring, animated, useTrail } from "react-spring";
+import { useColorMode } from "@docusaurus/theme-common";
 import styled from "@emotion/styled";
 import BgImage from "@site/static/img/home/020.svg";
+import BgImageWhite from "@site/static/img/home/020-white.svg";
 import MusicUrl from "@site/static/img/home/music.svg";
 import Styles from "./HomepageFeatures.module.scss";
 import BillBill from "@site/static/img/home/billbill.svg";
@@ -9,8 +11,6 @@ import QQ from "@site/static/img/home/qq.svg";
 import WeChat from "@site/static/img/home/weChat.svg";
 
 export default function HomepageFeatures() {
-
-
   const props = useSpring({
     opacity: 1,
     transform: "translateY(0)",
@@ -35,7 +35,15 @@ export default function HomepageFeatures() {
     },
   });
 
-
+  const { isDarkTheme } = useColorMode();
+  const SvgBackGround = styled(isDarkTheme ? BgImage : BgImageWhite)`
+    height: 100%;
+    width: 50vw;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    margin-bottom: 50px;
+  `;
 
   return (
     <div className={Styles.mainWrapper}>
@@ -79,15 +87,6 @@ function SocialLinks({ animatedProps, ...props }) {
     </animated.div>
   );
 }
-
-const SvgBackGround = styled(BgImage)`
-height: 100%;
-width: 50vw;
-background-repeat: no-repeat;
-background-position: right center;
-background-size: cover;
-margin-bottom: 50px;
-`;
 
 const Music = styled(MusicUrl)`
   position: fixed;
