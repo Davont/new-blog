@@ -1,0 +1,46 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.mainWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+
+  .title {
+    margin-bottom: 50px;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    position: relative;
+    // bottom: 150px;
+    justify-content: center;
+    font-weight: 600;
+    .subTitle {
+      font-size: 22px;
+      font-weight: 300;
+    }
+    & > div > span {
+      color: #EF8138;
+    }
+    .socialLinks {
+      & > a {
+        cursor: pointer;
+        padding-right: 26px;
+      }
+    }
+  }
+}
