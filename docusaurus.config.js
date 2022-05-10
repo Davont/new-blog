@@ -11,9 +11,10 @@ module.exports = {
   projectName: "docusaurus", // Usually your repo name.
   // staticDirectories: ['public', 'static'],
   themeConfig: {
-    // 增加C++语言高亮提示，其他语言参考:  https://prismjs.com/#supported-languages
+    // 增加js语言高亮提示，其他语言参考:  https://prismjs.com/#supported-languages
     prism: {
-      additionalLanguages: ["cpp"],
+      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ["jsx"],
     },
     // SEO
     metadata: [
