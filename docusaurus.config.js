@@ -14,7 +14,7 @@ module.exports = {
     // 增加js语言高亮提示，其他语言参考:  https://prismjs.com/#supported-languages
     prism: {
       theme: require('prism-react-renderer/themes/dracula'),
-      additionalLanguages: ["jsx"],
+      additionalLanguages: ["javascript","typescript","jsx"],
     },
     // SEO
     metadata: [
@@ -57,6 +57,16 @@ module.exports = {
         {
           to: "docs/react/react-hooks",
           label: "React源码",
+          position: "right",
+        },
+        {
+          to: "docs/interview/May/5-10",
+          label: "每日面试题",
+          position: "right",
+        },
+        {
+          to: "docs/typescript/type-challenges",
+          label: "Typescript",
           position: "right",
         },
         {

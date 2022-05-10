@@ -22,30 +22,30 @@ module.exports = {
       "algorithm/二叉树/inOrder",
       "algorithm/二叉树/postOrder",
     ],
-    动态规划: ["algorithm/Dynamic-programming/Dynamic-programming"],
-    手写函数: [
-      "algorithm/手写函数/call",
-      "algorithm/手写函数/apply",
-      "algorithm/手写函数/extends",
-      "algorithm/手写函数/lazyload",
-      "algorithm/手写函数/unique",
-      "algorithm/手写函数/assign",
-      "algorithm/手写函数/lru",
-      "algorithm/手写函数/promise",
-      "algorithm/手写函数/ajax",
-      "algorithm/手写函数/instanceof",
-    ],
-    算法模板: [
-      "algorithm/模板/trie",
-      "algorithm/模板/quickSort",
-      "algorithm/模板/mergeSort",
-      "algorithm/模板/binarySearch",
-      "algorithm/模板/doublePoint",
-      "algorithm/模板/qianzhuihe",
-      "algorithm/模板/monotonousStack",
-
-      "algorithm/算法思维/dp",
-    ],
+    // 动态规划: ["algorithm/Dynamic-programming/Dynamic-programming"],
+    // 手写函数: [
+    //   "algorithm/手写函数/call",
+    //   "algorithm/手写函数/apply",
+    //   "algorithm/手写函数/extends",
+    //   "algorithm/手写函数/lazyload",
+    //   "algorithm/手写函数/unique",
+    //   "algorithm/手写函数/assign",
+    //   "algorithm/手写函数/lru",
+    //   "algorithm/手写函数/promise",
+    //   "algorithm/手写函数/ajax",
+    //   "algorithm/手写函数/instanceof",
+    // ],
+    // 算法模板: [
+    //   "algorithm/模板/trie",
+    //   "algorithm/模板/quickSort",
+    //   "algorithm/模板/mergeSort",
+    //   "algorithm/模板/binarySearch",
+    //   "algorithm/模板/doublePoint",
+    //   "algorithm/模板/qianzhuihe",
+    //   "algorithm/模板/monotonousStack",
+    //   "algorithm/算法思维/dp",
+    // ],
+    BFS: ["algorithm/BFS/intro"],
   },
   react: {
     React: [
@@ -57,6 +57,17 @@ module.exports = {
     ],
     Redux: ["redux/redux-hoc"],
     ReactRouter: ["react-router/react-router-v6"],
+  },
+  typescript: {
+    TypeChallenges: [
+      "typescript/type-challenges/index",
+      "typescript/type-challenges/13",
+    ],
+  },
+  interview: {
+    May: [
+      "interview/May/5-10",
+    ],
   },
   // But you can create a sidebar manually
   /*
