@@ -14,7 +14,6 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  console.log(siteConfig);
   return (
     <Layout title={`${siteConfig.title}前端`} description="Davont前端工程师">
      
