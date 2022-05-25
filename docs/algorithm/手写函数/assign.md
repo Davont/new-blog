@@ -12,7 +12,7 @@ keywords:
 ---
 
 
-## Object.assign
+## Object.assign {#objectassign}
 ```ts
   function assign(target: object, ...sources: any[]): object {
     if (!isObject(target)) {
