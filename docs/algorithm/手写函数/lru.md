@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 1.JS实现LRU算法 {#1js实现lru算法}
+## 1.JS实现LRU算法
 ```js
 class LRUCache{
     constructor(capacity){

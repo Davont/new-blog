@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 7.手动实现ES5的继承 {#7手动实现es5的继承}
+## 7.手动实现ES5的继承
 ```js
 function People() {
     this.type = 'prople'
@@ -28,21 +28,21 @@ function Man(name) {
 }
 ```
 
-### No.1原型继承 {#no1原型继承}
+### No.1原型继承
 ```js
 Man.prototype = new People();
 let a = new Man()
 console.log(a.__proto__)
 ```
 
-### No.2构造函数继承 {#no2构造函数继承}
+### No.2构造函数继承
 ```js
 function Man(name){
     People.call(this)
 }
 ```
 
-### No.3组合继承 {#no3组合继承}
+### No.3组合继承
 ```js
 function Man(name){
     People.call(this)
@@ -50,7 +50,7 @@ function Man(name){
 Man.prototype = People.prototype
 ```
 
-### No.4寄生组合继承 {#no4寄生组合继承}
+### No.4寄生组合继承
 ```js
 function Man(name){
     People.call(this)

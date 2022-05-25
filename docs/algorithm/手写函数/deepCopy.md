@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 1.手写深克隆 {#1手写深克隆}
+## 1.手写深克隆
 ```js
 function copy(data){
     let obj = data instanceof Array ? [] : {}

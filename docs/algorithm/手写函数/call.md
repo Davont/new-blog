@@ -15,7 +15,7 @@ keywords:
 
 
 
-## 1.模拟call {#1模拟call}
+## 1.模拟call
 ```js
 
 Function.prototype.mycall = function(context = window, ...args){

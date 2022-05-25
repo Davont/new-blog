@@ -7,7 +7,7 @@ author_url: https://github.com/Davont
 tags: [coding,前端工程化,模板]
 ---
 
-### 发起请求[](#发起请求) {#发起请求发起请求}
+### 发起请求[](#发起请求)
 
 TDesign React Starter 初始化的项目中，采用 [axios](https://github.com/axios/axios) 做为请求的资源库，并对其做了封装，在组件中发起请求示例如下。
 
@@ -27,7 +27,7 @@ request
 
 ```
 
-### Mock 数据[](#mock-数据) {#mock-数据mock-数据}
+### Mock 数据[](#mock-数据)
 
 如果需要进行数据 Mock，在 `vite.config.js` 中，将 viteMockServe 中配置 `localEnabled` 为 `true` ，即可开启 mock server 的拦截。
 
@@ -39,7 +39,7 @@ viteMockServe({
 
 ```
 
-### 请求代理[](#请求代理) {#请求代理请求代理}
+### 请求代理[](#请求代理)
 
 在`vite.config.js`中进行代理设置，使用`Vite`的`http-proxy`。
 

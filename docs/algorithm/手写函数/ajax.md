@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 1.手动实现一个Ajax {#1手动实现一个ajax}
+## 1.手动实现一个Ajax
 ```js
 function myAjax(config){
     let {
@@ -41,7 +41,7 @@ function myAjax(config){
 }
 ```
 
-## 2.基于Promise封装一个Ajax {#2基于promise封装一个ajax}
+## 2.基于Promise封装一个Ajax
 ```js
 function promiseAjax(config){
     let {

@@ -6,9 +6,9 @@ title: React hooks 源码全方位解析
 本篇博客对React17的Hooks源码进行了剖析, 目的是理解React的Hooks设计
 
 
-## 1. useEffect {#1-useeffect}
+## 1. useEffect
 
-### 用法 {#用法}
+### 用法
 ```typescript
 
 function useEffect(effect: EffectCallback, deps?: DependencyList): void;
@@ -37,9 +37,9 @@ useEffect(() => {
 
 ```
 
-### 源码实现: {#源码实现}
+### 源码实现:
 
-### 1.1 入口定义 {#11-入口定义}
+### 1.1 入口定义
 ```typescript
 
 export function useEffect(
@@ -52,7 +52,7 @@ export function useEffect(
 
 ```
 
-### 1.2 resolveDispatch() {#12-resolvedispatch}
+### 1.2 resolveDispatch()
 
 ```typescript
 
@@ -66,7 +66,7 @@ function resolveDispatcher() {
 
 ```
 
-### 1.3 ReactCurrentDispatcher.current {#13-reactcurrentdispatchercurrent}
+### 1.3 ReactCurrentDispatcher.current
 
 ```typescript
 
@@ -77,12 +77,12 @@ const ReactCurrentDispatcher = {
 ```
 
 
-### 1.4 源码在react-reconciler中的ReactFiberHooks {#14-源码在react-reconciler中的reactfiberhooks}
+### 1.4 源码在react-reconciler中的ReactFiberHooks
 
 
-## 2. useState {#2-usestate}
+## 2. useState
 
-### 2.1 fiber设计 {#21-fiber设计}
+### 2.1 fiber设计
 
 在`function component`中利用`fiber`保存了`hooks`列表
 
@@ -98,7 +98,7 @@ type Fiber = {|
 
 ```
 
-### 2.2 dispatchAction执行update {#22-dispatchaction执行update}
+### 2.2 dispatchAction执行update
 
 ```typescript jsx
 import {useState} from "react";
@@ -124,9 +124,9 @@ const update: Update<S, A> = {
 
 ```
 
-## 3 useState and useReducer {#3-usestate-and-usereducer}
+## 3 useState and useReducer
 
-### 3.1 理解 {#31-理解}
+### 3.1 理解
 
 首先需要明白的是, `useState`和`useReducer`这俩个`hooks`是`Redux`的创始人`Dan`加入React核心团队后带来的变化
 
@@ -154,7 +154,7 @@ function useReducer(reducer, initialArg, init) {
 
 > 俩个Hook在更新state的时候逻辑和updateQueue的更新逻辑是差不多的，循环更新函数，计算出新的state
 
-### Q1: 为什么采用了环状单链表的结构? {#q1-为什么采用了环状单链表的结构}
+### Q1: 为什么采用了环状单链表的结构?
 
 在调度阶段取得第一个`initialState`, 然后循环调用`updateQueue`,
 
@@ -163,9 +163,9 @@ function useReducer(reducer, initialArg, init) {
 这时候需要和第一个`update`比较判断来确保所有的`update`都执行结束
 
 
-## 4. useEffect and useLayoutEffect {#4-useeffect-and-uselayouteffect}
+## 4. useEffect and useLayoutEffect
 
-### 4.1 useEffect {#41-useeffect}
+### 4.1 useEffect
 
 当我们修改了数据需要`update`, `React` 调用`mutation`之前会对副作用函数进行`flush`
 
@@ -250,7 +250,7 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedLanes) {
 }
 ```
 
-### 4.2 useEffect和useLayout的区别: {#42-useeffect和uselayout的区别}
+### 4.2 useEffect和useLayout的区别:
 
 - `useEffect`在`commitFiberToLayout`阶段(Layout阶段)开启调度, 把回调函数和销毁函数保存, 在Layout阶段结束后统一`异步`调用
 
@@ -266,11 +266,11 @@ React在执行
 
 ```
 
-## 5. useRef {#5-useref}
+## 5. useRef   
 
 总述: useRef -->  通往 mutable 的通道
 
-### 5.1 是什么 {#51-是什么}
+### 5.1 是什么
 
 从`6.不同Hook的dispatcher`可以看到useRef同样分为俩个函数`mountRef`和`updateRef`
 
@@ -314,7 +314,7 @@ export function createRef(): RefObject {
 
 可以看到`useRef`本质上就是一个包含`current`的对象
 
-### 5.2 如何工作 {#52-如何工作}
+### 5.2 如何工作
 
 机制描述 --> 通过`topic`来确定`mutation`操作
 
@@ -344,9 +344,9 @@ export const ChildDeletion = /*                */ 0b00000000000000000010000;
 
 所以，对于`HostComponent`、`ClassComponent`如果包含`ref`操作，那么也会赋值相应的`effectTag`
 
-#### 1. render阶段 {#1-render阶段}
+#### 1. render阶段
 
-##### 1.1 标记`topic` {#11-标记topic}
+##### 1.1 标记`topic`
 在render阶段通过markRef来对含有`ref`的`fiber`标记effectTag
 
 ```typescript
@@ -367,7 +367,7 @@ function markRef(current: Fiber | null, workInProgress: Fiber) {
 
 ```
 
-##### 1.2 何时赋值? {#12-何时赋值}
+##### 1.2 何时赋值?
 
 在commitLayout阶段对ref进行赋值`commitAttachRef`
 
@@ -406,9 +406,9 @@ function commitAttachRef(finishedWork: Fiber) {
 - update阶段ref属性改变
 
 
-#### 2. commit阶段 {#2-commit阶段}
+#### 2. commit阶段
 
-##### 2.1 移除之前的ref指向 {#21-移除之前的ref指向}
+##### 2.1 移除之前的ref指向
 
 ```typescript
 
@@ -462,7 +462,7 @@ function commitDetachRef(current) {
 ```
 
 
-##### 2.2 根据`topic`确定`mutation`类型 {#22-根据topic确定mutation类型}
+##### 2.2 根据`topic`确定`mutation`类型
 
 ```typescript
 
@@ -559,7 +559,7 @@ switch (primaryEffectTag) {
 ```
 
 
-##### 2.3执行`mutation`操作 {#23执行mutation操作}
+##### 2.3执行`mutation`操作
 
 在上文的`switch`结构中确定了`mutation`类型, 如果是`Deletion`会执行`commitDeletion`操作
 
@@ -584,7 +584,7 @@ function safelyDetachRef(current: Fiber) {
 
 ```
 
-## 6. 不同 Hook的 dispatcher {#6-不同-hook的-dispatcher}
+## 6. 不同 Hook的 dispatcher
 
 有这么三个不同的dispatcher来判断是什么时候执行的更新
 

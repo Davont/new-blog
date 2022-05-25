@@ -5,7 +5,7 @@ title: React性能优化的常用方法
 
 本篇博客记录常用的React性能优化首都按
 
-## 1. React Function Component性能优化方案 {#1-react-function-component性能优化方案}
+## 1. React Function Component性能优化方案
 
 React重复渲染根源: diff 算法的单端复用查找， 组件`更新颗粒度`是`父组件以及父组件下所有子组件`为单位的，所以在
 父组件state状态更新时，子组件state没有更改却被重新渲染，造成性能浪费
@@ -14,7 +14,7 @@ React重复渲染根源: diff 算法的单端复用查找， 组件`更新颗粒
 
 以下仅为`性能优化`手段，不要将他作为阻止渲染的手段
 
-### 1.1 memo {#11-memo}
+### 1.1 memo
 
 main code
 
@@ -66,7 +66,7 @@ const MemoHome = memo(Home);
 
 此方法仅作为性能优化的方式而存在。但请不要依赖它来“阻止”渲染，因为这会产生 bug。
 
-### 1.2. useCallback 和 useMemo {#12-usecallback-和-usememo}
+### 1.2. useCallback 和 useMemo
 
 `useCallback`用于保存`函数`, `useMemo`一般用于保存函数体的`执行结果`
 
@@ -75,7 +75,7 @@ const MemoHome = memo(Home);
 当我们在写`utils`工具函数,导出任意一个函数的时候，你都应该去考虑将他用useCallback包裹来进行性能优化
 
 
-### 1.3 扩展阅读 {#13-扩展阅读}
+### 1.3 扩展阅读
 官方提到这么一个场景，当我们的`useCallback`依赖了一个频繁更新的`state`值
 
 这时候只要`state`改变， `useCallback`保存的函数也会执行
