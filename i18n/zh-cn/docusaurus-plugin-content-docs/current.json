@@ -38,5 +38,17 @@
   "sidebar.react.category.ReactRouter": {
     "message": "ReactRouter",
     "description": "The label for category ReactRouter in sidebar react"
+  },
+  "sidebar.algorithm.category.BFS": {
+    "message": "BFS",
+    "description": "The label for category BFS in sidebar algorithm"
+  },
+  "sidebar.typescript.category.TypeChallenges": {
+    "message": "TypeChallenges",
+    "description": "The label for category TypeChallenges in sidebar typescript"
+  },
+  "sidebar.interview.category.May": {
+    "message": "May",
+    "description": "The label for category May in sidebar interview"
   }
 }

@@ -69,6 +69,17 @@ module.exports = {
       "interview/May/5-10",
     ],
   },
+  guide: {
+    "上手":['guide/快速开始'],
+    "开发":[
+      'guide/进入开发',
+      'guide/开发规范',
+      'guide/数据Mock',
+      'guide/路由与菜单',
+      'guide/样式与静态资源',
+    ],
+    "构建":['guide/项目构建']
+  }
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

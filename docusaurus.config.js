@@ -70,6 +70,11 @@ module.exports = {
           position: "right",
         },
         {
+          to: "docs/guide/协同开发-快速开始",
+          label: "协同开发",
+          position: "right",
+        },
+        {
           to: "docs/resources/resources-intro",
           label: "资源整理",
           position: "right",
@@ -129,6 +134,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          sidebarCollapsed: false,
           // Please change this to your repo.
           editUrl:
             "https://github.com/facebook/docusaurus/edit/master/website/",
