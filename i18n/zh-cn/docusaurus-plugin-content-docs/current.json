@@ -50,5 +50,17 @@
   "sidebar.interview.category.May": {
     "message": "May",
     "description": "The label for category May in sidebar interview"
+  },
+  "sidebar.guide.category.上手": {
+    "message": "上手",
+    "description": "The label for category 上手 in sidebar guide"
+  },
+  "sidebar.guide.category.开发": {
+    "message": "开发",
+    "description": "The label for category 开发 in sidebar guide"
+  },
+  "sidebar.guide.category.构建": {
+    "message": "构建",
+    "description": "The label for category 构建 in sidebar guide"
   }
 }

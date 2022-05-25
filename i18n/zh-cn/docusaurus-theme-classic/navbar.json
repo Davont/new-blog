@@ -42,5 +42,9 @@
   "item.label.Typescript": {
     "message": "Typescript",
     "description": "Navbar item with label Typescript"
+  },
+  "item.label.协同开发": {
+    "message": "协同开发",
+    "description": "Navbar item with label 协同开发"
   }
 }
