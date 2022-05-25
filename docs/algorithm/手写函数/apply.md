@@ -13,7 +13,7 @@ keywords:
 ---
 
 
-## 2.模拟apply
+## 2.模拟apply {#2模拟apply}
 ```js
 Function.prototype.myapply = function(context = window, args){
     if(this == Function.prototype){

@@ -12,8 +12,8 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 基础版本
-### 代码
+## 基础版本 {#基础版本}
+### 代码 {#代码}
 ```js
 class MyPromise{
     constructor(executor){
@@ -41,8 +41,8 @@ class MyPromise{
 
 ```
 
-## then方法
-### 代码
+## then方法 {#then方法}
+### 代码 {#代码-1}
 ```js
 class MyPromise{
     constructor(executor){
@@ -80,7 +80,7 @@ class MyPromise{
 }
 ```
 
-### 增加订阅者模式
+### 增加订阅者模式 {#增加订阅者模式}
 可以看出如果之前的Promise没有改变state值，一直为PENDING时,then方法不会执行，我们可以采用订阅者模式监听state值的改变，如果改变，那么发布执行函数
 
 ```js
@@ -132,8 +132,8 @@ class MyPromise{
 }
 ```
 
-## then异步执行
-### 代码
+## then异步执行 {#then异步执行}
+### 代码 {#代码-2}
 > 我们不难发现，上面的代码中，then是同步代码，不符合promise.then的要求，这里我们使用定时器来模拟异步任务
 
 ```js
@@ -191,7 +191,7 @@ class MyPromise{
     }
 }
 ```
-### 测试
+### 测试 {#测试}
 我们对上面的代码进行测试:
 ```js
 console.log(0);
@@ -207,8 +207,8 @@ let promise = new MyPromise((resolve, reject) => {
 console.log(4);             //0 1 4 2
 ```
 
-## then方法链式调用
-### 传递普通值
+## then方法链式调用 {#then方法链式调用}
+### 传递普通值 {#传递普通值}
 考虑如下问题：
 * 如何保证then方法可以链式调用?
 
@@ -279,7 +279,7 @@ class MyPromise{
 }
 ```
 
-### 测试
+### 测试 {#测试-1}
 我们对上面的代码进行测试
 ```js
 console.log(0);
@@ -300,7 +300,7 @@ let promise = new MyPromise((resolve, reject) => {
 )                                                       // 0 1 2 aaa
 ```
 
-### 传递Promise
+### 传递Promise {#传递promise}
 > 上面的代码默认then返回的是一个普通的值，但如果要让then返回一个promise，那我们就要写一个辅助函数来进行处理
 
 ```js
@@ -370,7 +370,7 @@ class MyPromise{
     }
 }
 ```
-### 核心处理函数resolvePromise
+### 核心处理函数resolvePromise {#核心处理函数resolvepromise}
 ```js
 const reslovePromise = (promise2, x, resolve, reject) => {
     if(promise2 === x){
@@ -400,7 +400,7 @@ const reslovePromise = (promise2, x, resolve, reject) => {
 }
 
 ```
-### 测试
+### 测试 {#测试-2}
 ```js
 console.log(0);
 
@@ -422,8 +422,8 @@ let promise = new MyPromise((resolve, reject) => {
 )                                                               //0 1 2 ttt
 ```
 
-## Promise方法的实现
-### Promise.all()
+## Promise方法的实现 {#promise方法的实现}
+### Promise.all() {#promiseall}
 ```js
 function MyPromiseAll (promises) {
   // 检测目标是不是iterator类型
@@ -461,7 +461,7 @@ function MyPromiseAll (promises) {
 }
 ```
 
-## 基础版本完整代码
+## 基础版本完整代码 {#基础版本完整代码}
 ```js
 class MyPromise{
     constructor(executor){

@@ -13,7 +13,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 一. 算法模板
+## 一. 算法模板 {#一-算法模板}
 
 基于分治做排序
 
