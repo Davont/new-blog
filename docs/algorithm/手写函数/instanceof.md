@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 1.手动实现一个instanceof
+## 1.手动实现一个instanceof {#1手动实现一个instanceof}
 ```js
 function myinstanceof(target, origin){
     let proto = target.__proto__

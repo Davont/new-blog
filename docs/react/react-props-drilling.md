@@ -10,13 +10,13 @@ title: React中的props-drilling问题
 这个时候, 我们可以利用一些技巧来解决这些问题, 我们来看一个常见的场景
 
 
-## 一. prop drilling 问题
+## 一. prop drilling 问题 {#一-prop-drilling-问题}
 
 合理使用 Component Composition
 
 我们 `authenticated-app` 使用状态提升定义了一个公共的 `prop`, 并把它层层传递给了子组件
   
-### 1.1 props-drilling的缺点
+### 1.1 props-drilling的缺点 {#11-props-drilling的缺点}
 
 - 缺点一: state definition is far away the place where the state is being used 高耦合
 - 缺点二: 我们这里使用状态提升定义了一个公共的 prop, 并把它层层传递给了子组件，(下钻)
@@ -32,13 +32,13 @@ Component Composition 实际上也是一种状态提升的手段，并不是适�
 
 那么我们来看看什么是`控制反转`
 
-## 二. 什么是控制反转
+## 二. 什么是控制反转 {#二-什么是控制反转}
 
 我们经常会使用`控制反转`的技巧来进行代码`解耦合`
 
 那么什么是控制反转呢, 我们来看看这样一个场景
 
-### 2.1 场景
+### 2.1 场景 {#21-场景}
 
 如果我们有个 car 类, 需要使用到 engine(引擎)和 tires(轮胎)
 
@@ -58,7 +58,7 @@ class Car {
 
 car 与 engine 和 tires 获取实例的方法高度耦合，倘如我们更改了 tires 获取实例的办法，那么需要找到使用了 tires 的地方全部进行修改
 
-### 2.2 优化
+### 2.2 优化 {#22-优化}
 
 此时我们可以定义一个容器
 

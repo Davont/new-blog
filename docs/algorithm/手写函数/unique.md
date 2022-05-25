@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 6.手写数组去重
+## 6.手写数组去重 {#6手写数组去重}
 ```js
 const unique = (array)=>{
     let container = {}

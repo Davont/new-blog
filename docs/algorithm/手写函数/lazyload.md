@@ -12,7 +12,7 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
-## 12.图片懒加载
+## 12.图片懒加载 {#12图片懒加载}
 ```js
 
 let imgs = document.getElementsByTagName("img");
